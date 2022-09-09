@@ -1,0 +1,13 @@
+<h1><%= @letters %></h1>
+<h1><%= @score %></h1>
+<% if @included && @english_word %>
+  <p>Congratulations <%= @score %> is a valid English Word</p>
+<% elsif @included && !(@english_word) %>
+  <p><%= @score %> is not a valid English Word</p>
+<% elsif @english_word && !(@included) %>
+  <p> <%= @score %> is a valid English Word but is not included</p>
+<% else %>
+  <p>Try Again!</p>
+<% end %>
+
+<%= link_to "Play Again!", new_path %>
